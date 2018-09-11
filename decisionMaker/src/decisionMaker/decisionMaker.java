@@ -14,11 +14,12 @@ public class decisionMaker {
 		System.out.println("Alright " + userName + " welcome to the decision maker");
 		System.out.println("How many choices do you have to choose from?");
 		int numberOfChoices = userInput.nextInt();
-		String [] choices = new String[100]; 
-		for (int i = 0; i < numberOfChoices; i++)
+		String [] choices = new String[numberOfChoices]; 
+		for (int i = 0; i < choices.length; i++)
 		{
-			System.out.print("next choice ?");
-			choices[i]  = userInput.nextLine();
+			System.out.println("choice #" + (i+1));
+			String inputChoice = userInput.nextLine();
+			choices[i]  = inputChoice;
 		}
 	}
 }
