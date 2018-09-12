@@ -8,18 +8,26 @@ public class decisionMaker {
 	}
 	public static void makeDecision()
 	{
-		Scanner userInput = new Scanner(System.in);
+		//take user's name
+		Scanner userInputOne = new Scanner(System.in);
 		System.out.println("What's your name?");
-		String userName = userInput.nextLine();
+		String userName = userInputOne.nextLine();
+		
+		//ask for number of choices 
+		Scanner userInputTwo = new Scanner(System.in);
 		System.out.println("Alright " + userName + " welcome to the decision maker");
 		System.out.println("How many choices do you have to choose from?");
-		int numberOfChoices = userInput.nextInt();
+		int numberOfChoices = userInputTwo.nextInt();
+		
+		//user lists choices 
 		String [] choices = new String[numberOfChoices]; 
 		for (int i = 0; i < choices.length; i++)
 		{
 			System.out.println("choice #" + (i+1));
-			String inputChoice = userInput.nextLine();
+			String inputChoice = userInputOne.nextLine();
 			choices[i]  = inputChoice;
 		}
+		String randomChoice = choices[(int)(Math.random()*numberOfChoices)];
+		System.out.println("You should pick choose " + randomChoice);
 	}
 }
